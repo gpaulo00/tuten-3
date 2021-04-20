@@ -81,7 +81,7 @@ class SignIn extends React.Component {
       },
     }).then((res) => {
       this.setState({ ...this.state, loading: false });
-      console.log(res.data['sessionTokenBck']);
+      this.props.setToken(res.data['sessionTokenBck']);
     }).catch((err) => {
       this.setState({
         ...this.state,
