@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import SignIn from './pages/SignIn.js';
+import Content from './pages/Content.js';
 
 function App() {
   const [token, setToken] = useState();
@@ -8,9 +9,7 @@ function App() {
   if (!token) {
     return <SignIn setToken={setToken}></SignIn>;
   }
-  return (
-    <div>Welcome!</div>
-  );
+  return <Content token={token}>Welcome!</Content>;
 }
 
 export default App;
